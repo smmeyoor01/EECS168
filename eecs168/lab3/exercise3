@@ -1,0 +1,17 @@
+count = input('What day do you want a sick count for?: ')
+
+days = int(count)
+virus = [0, 1, 4, 64]
+
+total = 0
+
+num = 0
+
+for i in range(days - 3, days):
+    if i > 3:
+        for x in range(i-3, i): 
+            num += virus[x]
+        virus.append(num)
+        num = 0
+    total += virus[i]
+print(total)
